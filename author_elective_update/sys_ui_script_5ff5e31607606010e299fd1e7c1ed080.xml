@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="DELETE">
+        <active>true</active>
+        <description>How to Call UI Script From Client Script</description>
+        <global>false</global>
+        <name>x_58872_needit.Needit.UIScriptDemo</name>
+        <script><![CDATA[var x_58872_needit = x_58872_needit || {};
+
+x_58872_needit.Needit.UIScriptDemo = (function() {
+	"use strict";
+
+	var UIScriptDemo=Class.create();
+	UIScriptDemo.prototype={
+	initialize: function()
+	{
+		
+	},
+	
+	demoCallFromClientScript: function(TableName)
+	{
+		var count=0;
+		var objone= new GlideRecord(TableName);
+		objone.addQuery('sys_created_by',g_user.userName);
+		objone.query();
+		while(objone.next())
+			{
+				count++;
+			}
+		g_form.addInfoMessage("Total Number of "+TableName+" Records Created by you are : "+count);
+		
+	},
+};
+	
+	
+/* set your private variables and functions here. For example: 
+	var privateVar = 0; 
+	function private_function() {
+		return ++privateVar;
+	}
+*/
+
+/* Share variables between multiple UI scripts by adding them to your scope object. For example: 
+	x_58872_needit.sharedVar = 0; 
+
+ Then access them in your scripts the same way. For example: 
+	function get_shared() {
+		return x_58872_needit.sharedVar;
+	}
+*/
+
+	return {
+
+/* set your public API here. For example:
+		incrementAndReturnPrivateVar: function() {
+			return private_function();
+		},
+*/
+		type:  "Needit.UIScriptDemo"
+	};
+})();
+]]></script>
+        <script_name>Needit.UIScriptDemo</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-20 16:29:33</sys_created_on>
+        <sys_id>5ff5e31607606010e299fd1e7c1ed080</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_58872_needit.Needit.UIScriptDemo</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ui_script_5ff5e31607606010e299fd1e7c1ed080</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-20 16:29:33</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>true</use_scoped_format>
+    </sys_ui_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>869206c5dbc75b8052e3f70fbf9619a0</instance_id>
+        <instance_name>dev63023</instance_name>
+        <name>sys_ui_script_5ff5e31607606010e299fd1e7c1ed080</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;How to Call UI Script From Client Script&lt;/description&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;x_58872_needit.Needit.UIScriptDemo&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var x_58872_needit = x_58872_needit || {};
+
+x_58872_needit.Needit.UIScriptDemo = (function() {
+	"use strict";
+
+	var UIScriptDemo=Class.create();
+	UIScriptDemo.prototype={
+	initialize: function()
+	{
+		
+	},
+	
+	demoCallFromClientScript: function(TableName)
+	{
+		var count=0;
+		var objone= new GlideRecord(TableName);
+		objone.addQuery('sys_created_by',g_user.userName);
+		objone.query();
+		while(objone.next())
+			{
+				count++;
+			}
+		g_form.addInfoMessage("Total Number of "+TableName+" Records Created by you are : "+count);
+		
+	},
+};
+	
+	
+/* set your private variables and functions here. For example: 
+	var privateVar = 0; 
+	function private_function() {
+		return ++privateVar;
+	}
+*/
+
+/* Share variables between multiple UI scripts by adding them to your scope object. For example: 
+	x_58872_needit.sharedVar = 0; 
+
+ Then access them in your scripts the same way. For example: 
+	function get_shared() {
+		return x_58872_needit.sharedVar;
+	}
+*/
+
+	return {
+
+/* set your public API here. For example:
+		incrementAndReturnPrivateVar: function() {
+			return private_function();
+		},
+*/
+		type:  "Needit.UIScriptDemo"
+	};
+})();
+]]&gt;&lt;/script&gt;&lt;script_name&gt;Needit.UIScriptDemo&lt;/script_name&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-11-20 16:29:33&lt;/sys_created_on&gt;&lt;sys_id&gt;5ff5e31607606010e299fd1e7c1ed080&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_58872_needit.Needit.UIScriptDemo&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_5ff5e31607606010e299fd1e7c1ed080&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-11-20 16:29:33&lt;/sys_updated_on&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;use_scoped_format&gt;true&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1911186414</payload_hash>
+        <record_name>x_58872_needit.Needit.UIScriptDemo</record_name>
+        <reverted_from/>
+        <source>640502cd07e82010e299fd1e7c1ed0c0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-20 16:29:33</sys_created_on>
+        <sys_id>6a67afd207606010e299fd1e7c1ed0d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>175e67d4ffb0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-20 16:29:33</sys_updated_on>
+        <type>UI Script</type>
+        <update_guid>a267afd2776060103bc75ca7142291d8</update_guid>
+        <update_guid_history>a267afd2776060103bc75ca7142291d8:1911186414</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-20 16:56:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_script">sys_ui_script</sys_db_object>
+        <sys_id>3df0f80d1cf34e838954a321d70b3a21</sys_id>
+        <sys_metadata>5ff5e31607606010e299fd1e7c1ed080</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_58872_needit.Needit.UIScriptDemo</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_ui_script_5ff5e31607606010e299fd1e7c1ed080</sys_update_name>
+        <sys_update_version display_value="sys_ui_script_5ff5e31607606010e299fd1e7c1ed080">6a67afd207606010e299fd1e7c1ed0d8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-20 16:56:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
