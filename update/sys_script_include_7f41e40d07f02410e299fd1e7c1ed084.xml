@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GLIDERECORD METHODS</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>In this video you will learn about GlideRecord which is used to perform database operations in ServiceNow like querying records from a table, insert records in a table, update records in a table and delete records from a table in ServiceNow.</description>
+        <name>GLIDERECORD METHODS</name>
+        <script><![CDATA[var count = new GlideAggregate('incident');
+count.addAggregate('COUNT');
+count.query();
+var incidents = 0;
+if(count.next()){ 
+   incidents = count.getAggregate('COUNT');
+}
+
+gs.info(incidents);
+
+
+var target = new GlideRecord('incident'); 
+target.addNotNullQuery('short_description');
+target.query();   // Issue the query to the database to get all records where short_description is not null
+while (target.next()) {   
+     // add code here to process the incident record
+gs.info(target.short_description);
+}
+
+var target = new GlideRecord('incident'); 
+target.addNotNullQuery('problem_id');
+target.setlimit(5);
+target.setWorkflow(false);
+target.orderBy('number');
+target.query();   // Issue the query to the database to get all records where short_description is not null
+while (target.next()) {   
+     // add code here to process the incident record
+gs.info('Number is ' + target.number + ' and problem number is ' + target.problem_id);
+} ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-28 15:10:47</sys_created_on>
+        <sys_id>7f41e40d07f02410e299fd1e7c1ed084</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GLIDERECORD METHODS</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_7f41e40d07f02410e299fd1e7c1ed084</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-28 15:10:47</sys_updated_on>
+    </sys_script_include>
+</record_update>
